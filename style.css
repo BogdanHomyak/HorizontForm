@@ -330,6 +330,10 @@ input::placeholder {
     border-radius: 8px;
 }
 
+.mobi-hidden{
+    display: none;
+}
+
 .return-location p {
     margin-left: 6px;
     color: #8A9197;

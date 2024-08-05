@@ -1144,7 +1144,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('.return-location, .data-picker-container, .residence-and-age, .check-box, .input-wrapper, .submit-btn, .promo-code, #returnLocationWrapper')
                 .forEach(el => el.classList.add('expanded'));
             locationInput.blur();
-            returnLocationButton.classList.remove('hidden');
+            returnLocationButton.classList.remove('mobi-hidden');
             formContainer.classList.remove('fixed-on-focus');
             submitBtn.style.display = 'block';
             moveResidenceAndAge();
@@ -1159,6 +1159,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.addEventListener('click', function (e) {
             if (e.target.closest('.autocomplete-items div')) {
+                expandForm();
+            }
+        });
+
+        locationInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
                 expandForm();
             }
         });
@@ -1178,6 +1184,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 promoCodeToggle.checked = false;
             }
         });
-
     }
 });
